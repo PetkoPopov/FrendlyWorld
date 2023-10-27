@@ -4,7 +4,7 @@ const { sign } = require("../lib/jwt")
 
 
 exports.register = async (data) => {
-    console.log(data.repeatPassword);
+    // console.log(data.repeatPassword);
     await userModel.create(data)
     return userModel
 }
