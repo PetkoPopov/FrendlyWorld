@@ -1,10 +1,14 @@
 const router = require('express').Router()
 const userService = require("../services/userService")
 
+
 router.get('/login', (req, res) => {
     res.render('login')
 })
-router.get('/register', (req, res) => {
+function midleware() {
+    return (req, res, next) => { console.log('from midleware !'); next() }
+}
+router.get('/register', midleware(), (req, res) => {
     res.render('register')
 })
 router.post("/register", async (req, res) => {
