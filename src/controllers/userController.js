@@ -29,13 +29,14 @@ router.post("/login", async (req, res) => {
         res.render('home')
     } else {
         // res.locals={}
-        res.clearCookie("FriendlyAnimal")
+        res.clearCookie('FriendlyAnimal')
         res.redirect('/register')
     }
 
 })
 router.get('/logout', (req, res) => {
-    res.clearCookie("FriendlyAnimal")
+
+    res.clearCookie('FriendlyAnimal')
     res.redirect('/login')
 })
 
